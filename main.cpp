@@ -19,20 +19,23 @@ int main() {
     displayArray(sptr);
 
     cout << "Reversed array: ";
-    displayArray(reverseArray(sptr));
+    reverseArray(sptr);
+    displayArray(sptr);
+
+    delete [] sptr;
     return 0;
 }
-
+// reverses the array passed to it
 string* reverseArray(string *Arr){
     string temp;
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 2; i++){
         temp = Arr[i];
-        Arr[i] = Arr[5-i];
-        Arr[5-i] = temp;
+        Arr[i] = Arr[4-i];
+        Arr[4-i] = temp;
     }
     return Arr;
 }
-
+// outputs the array passed to it nicely
 void displayArray(string *Arr){
     for(int i = 0; i < 5; i++){
         cout << *(Arr + i) << " ";
